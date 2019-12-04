@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello Many Times{% endblock %}
+
+{% block body %}
+    {{ dump(time) }}
+    <h1>Hello {{ name }}!</h1>
+
+   {% set color = ['<p><font color="red">Hello</font></p>', '<font color="blue">Hello</font>'] %}
+
+    {% for i in 1..time %}
+        {{ cycle(color, i)|raw }}
+    {% endfor %}
+
+
+{% endblock %}
